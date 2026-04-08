@@ -12,7 +12,7 @@ services:
       - PATH=/home/airflow/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-17-openjdk-amd64/bin
       - PYSPARK_PYTHON=/usr/local/bin/python
       - PYSPARK_DRIVER_PYTHON=/usr/local/bin/python
-      - _JAVA_OPTIONS="-Xmx512M -Xms512M"
+      - _JAVA_OPTIONS=-Xmx512M -Xms512M
       - SPARK_LOCAL_IP=127.0.0.1
     volumes:
       - ./dags:/opt/airflow/dags
