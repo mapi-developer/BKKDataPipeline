@@ -39,7 +39,7 @@ print(f"Processing {parsed_batch.count()} new records...")
 parsed_batch.write \
     .format("delta") \
     .mode("append") \
-    .save("./data/lakehouse/bronze/bkk_realtime")
+    .save("/opt/airflow/workspace/data/lakehouse/bronze/bkk_realtime")
 
 print("Batch written successfully!")
 spark.stop()

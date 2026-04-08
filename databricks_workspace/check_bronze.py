@@ -9,7 +9,7 @@ spark = SparkSession.builder \
 
 spark.sparkContext.setLogLevel("WARN")
 
-df = spark.read.format("delta").load("./data/lakehouse/bronze/bkk_realtime")
+df = spark.read.format("delta").load("/opt/airflow/workspace/data/lakehouse/bronze/bkk_realtime")
 
 print(f"Total records saved: {df.count()}")
 df.show(5, truncate=False)
