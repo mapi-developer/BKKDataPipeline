@@ -1,0 +1,8 @@
+confluent-kafka
+gtfs-realtime-bindings
+requests
+pyspark==3.5.0
+delta-spark==3.1.0
+dotenv
+apache-airflow
+apache-airflow-providers-standard

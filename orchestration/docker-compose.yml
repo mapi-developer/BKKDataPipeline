@@ -1,0 +1,29 @@
+services:
+  airflow:
+    build: .
+    container_name: bkk-airflow
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/database/airflow.db
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+      - PATH=/home/airflow/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-17-openjdk-amd64/bin
+      - PYSPARK_PYTHON=/usr/local/bin/python
+      - PYSPARK_DRIVER_PYTHON=/usr/local/bin/python
+      - _JAVA_OPTIONS="-Xmx512M -Xms512M"
+      - SPARK_LOCAL_IP=127.0.0.1
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../databricks_workspace:/opt/airflow/workspace
+      - ./database:/opt/airflow/database
+    command: standalone
+
+volumes: 
+  airflow_db:
+
+networks:
+  default:
+    external: true
+    name: bkk-network
