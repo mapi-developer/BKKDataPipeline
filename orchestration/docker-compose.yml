@@ -18,6 +18,7 @@ services:
       - ./dags:/opt/airflow/dags
       - ../databricks_workspace:/opt/airflow/workspace
       - ./database:/opt/airflow/database
+      - ../dbt_transform:/opt/airflow/dbt_transform
     command: standalone
 
 volumes: 
