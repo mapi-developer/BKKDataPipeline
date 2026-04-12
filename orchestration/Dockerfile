@@ -13,4 +13,4 @@ ENV PYSPARK_DRIVER_PYTHON=/usr/local/bin/python
 
 USER airflow
 
-RUN pip install --no-cache-dir pyspark==3.5.0 delta-spark==3.1.0 dbt-databricks
+RUN pip install --no-cache-dir pyspark==3.5.0 delta-spark==3.1.0 dbt-databricks apache-airflow-providers-fab

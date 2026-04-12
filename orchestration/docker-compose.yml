@@ -9,9 +9,11 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/database/airflow.db
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       
+      - AIRFLOW__CORE__AUTH_MANAGER=airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
+      
       - _AIRFLOW_WWW_USER_CREATE=true
-      - _AIRFLOW_WWW_USER_USERNAME=admin
-      - _AIRFLOW_WWW_USER_PASSWORD=admin
+      - _AIRFLOW_WWW_USER_USERNAME=matvei
+      - _AIRFLOW_WWW_USER_PASSWORD=matvei
       - _AIRFLOW_WWW_USER_EMAIL=admin@example.com
       - _AIRFLOW_WWW_USER_FIRSTNAME=Admin
       - _AIRFLOW_WWW_USER_LASTNAME=User
@@ -28,7 +30,8 @@ services:
       - ./database:/opt/airflow/database
       - ../dbt_transform:/opt/airflow/dbt_transform
     command: >
-      bash -c "echo 'admin' > /opt/airflow/standalone_admin_password.txt &&
+      bash -c "airflow db migrate &&
+      airflow users create --username matvei --password matvei --firstname Matvei --lastname Pisarev --role Admin --email admin@example.com || airflow users reset-password --username matvei --password matvei &&
       airflow standalone"
 
 volumes: 
