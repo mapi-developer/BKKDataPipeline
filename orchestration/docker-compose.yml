@@ -28,7 +28,7 @@ services:
       - ./dags:/opt/airflow/dags
       - ../databricks_workspace:/opt/airflow/workspace
       - ./database:/opt/airflow/database
-      - ../dbt_transform:/opt/airflow/dbt_transform
+      - ../:/opt/airflow/dbt_transform
     command: >
       bash -c "airflow db migrate &&
       airflow users create --username matvei --password matvei --firstname Matvei --lastname Pisarev --role Admin --email admin@example.com || airflow users reset-password --username matvei --password matvei &&

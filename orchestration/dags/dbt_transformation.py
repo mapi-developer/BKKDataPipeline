@@ -21,17 +21,18 @@ default_args = {
 def bkk_dbt_pipeline():
     run_dbt_silver = BashOperator(
         task_id='dbt_run_silver',
-        bash_command='cd /opt/airflow/dbt_transform && dbt run --select models/silver'
+        bash_command='cd /opt/airflow/dbt_transform && dbt run --select models/silver --profiles-dir .'
     )
 
     run_dbt_gold = BashOperator(
         task_id='dbt_run_gold',
-        bash_command='cd /opt/airflow/dbt_transform && dbt run --select models/gold'
+        bash_command='cd /opt/airflow/dbt_transform && dbt run --select models/gold --profiles-dir .'
     )
 
     run_dbt_test = BashOperator(
         task_id='dbt_test_models',
-        bash_command='cd /opt/airflow/dbt_transform && dbt test'
+        # ADD THE FLAG HERE TOO:
+        bash_command='cd /opt/airflow/dbt_transform && dbt test --profiles-dir .'
     )
 
     run_dbt_silver >> run_dbt_gold >> run_dbt_test

@@ -1,0 +1,147 @@
+[0m12:38:47.464483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7baafe1390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bae0d9fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bab0c6dd0>]}
+
+
+============================== 12:38:47.483399 | ac16fd35-5fd5-4482-87c1-42142a2f1960 ==============================
+[0m12:38:47.483399 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:38:47.484441 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt_transform/logs', 'profiles_dir': '.', 'empty': 'False', 'warn_error': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'quiet': 'False', 'write_json': 'True', 'printer_width': '80', 'use_colors': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt run --select models/silver --profiles-dir .', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'introspect': 'True', 'partial_parse': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'log_format': 'default'}
+[0m12:38:47.486225 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'databricks'
+[0m12:38:47.486847 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.0548338, "process_in_blocks": "0", "process_kernel_time": 0.095282, "process_mem_max_rss": "133584", "process_out_blocks": "2690", "process_user_time": 0.787599}
+[0m12:38:47.487194 [debug] [MainThread]: Command `dbt run` failed at 12:38:47.487127 after 0.06 seconds
+[0m12:38:47.487489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7baafe1150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7baf836150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7baafaffd0>]}
+[0m12:38:47.487814 [debug] [MainThread]: Flushing usage events
+[0m12:38:48.467775 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:41:59.521103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101cf92790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101cf92050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101cc8b2d0>]}
+
+
+============================== 12:41:59.522988 | 3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588 ==============================
+[0m12:41:59.522988 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:41:59.524250 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'empty': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --select models/silver --profiles-dir .', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'debug': 'False', 'introspect': 'True', 'printer_width': '80', 'version_check': 'True', 'profiles_dir': '.', 'log_cache_events': 'False', 'write_json': 'True', 'quiet': 'False', 'log_path': '/opt/airflow/dbt_transform/logs', 'log_format': 'default', 'cache_selected_only': 'False', 'target_path': 'None', 'use_experimental_parser': 'False', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'use_colors': 'True'}
+[0m12:42:00.053232 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:42:00.054368 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:42:00.054972 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:42:01.064130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbd3bb950>]}
+[0m12:42:01.099572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101dd767d0>]}
+[0m12:42:01.101074 [info ] [MainThread]: Registered adapter: databricks=1.11.6
+[0m12:42:01.150755 [warn ] [MainThread]: [[33mWARNING[0m]: Use managed Iceberg tables when table_format is iceberg. When this flag is disabled, UniForm is used instead.
+You may opt into the new behavior sooner by setting `flags.use_managed_iceberg` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:01.152079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbd334050>]}
+[0m12:42:01.159999 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m12:42:01.161519 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:42:01.161821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbea93410>]}
+[0m12:42:01.790315 [warn ] [MainThread]: [[33mWARNING[0m]: Enable concurrent execution of microbatch incremental batches. When enabled, dbt will run microbatch batches in parallel threads instead of sequentially. The microbatch strategy itself requires dbt-core 1.9+; this flag controls whether batches run concurrently.
+You may opt into the new behavior sooner by setting `flags.use_concurrent_microbatch` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:01.790821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbcd67ad0>]}
+[0m12:42:01.791349 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.bkk_pipeline.gold
+- models.bkk_pipeline.silver
+[0m12:42:01.794224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbcfbb7d0>]}
+[0m12:42:01.826170 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:01.827938 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:01.836809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbcece750>]}
+[0m12:42:01.837291 [info ] [MainThread]: Found 732 macros
+[0m12:42:01.837646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3e2ec7f8-2cd6-41b8-9ff6-bec7497c4588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0fbce8b750>]}
+[0m12:42:01.838211 [warn ] [MainThread]: The selection criterion 'models/silver' does not match any enabled nodes
+[0m12:42:01.839110 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m12:42:01.839546 [debug] [MainThread]: Command end result
+[0m12:42:01.859392 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:01.860855 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:01.863035 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_transform/target/run_results.json
+[0m12:42:01.863901 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.3730528, "process_in_blocks": "86504", "process_kernel_time": 0.224305, "process_mem_max_rss": "266176", "process_out_blocks": "13296", "process_user_time": 5.92109}
+[0m12:42:01.864390 [debug] [MainThread]: Command `dbt run` succeeded at 12:42:01.864323 after 2.37 seconds
+[0m12:42:01.864755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101cf92010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f101cc1bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10214de050>]}
+[0m12:42:01.865072 [debug] [MainThread]: Flushing usage events
+[0m12:42:02.837844 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:42:04.639393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64183e2fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64183e2dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6418371510>]}
+
+
+============================== 12:42:04.641287 | e81350f5-5665-43e4-b6f0-7504103cf7cf ==============================
+[0m12:42:04.641287 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:42:04.641951 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'use_colors': 'True', 'log_path': '/opt/airflow/dbt_transform/logs', 'quiet': 'False', 'invocation_command': 'dbt run --select models/gold --profiles-dir .', 'introspect': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'version_check': 'True', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'warn_error': 'None', 'debug': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'target_path': 'None', 'log_format': 'default'}
+[0m12:42:05.035462 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:42:05.036602 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:42:05.037421 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:42:05.446845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f641b2ab650>]}
+[0m12:42:05.480980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f64183b5c90>]}
+[0m12:42:05.482772 [info ] [MainThread]: Registered adapter: databricks=1.11.6
+[0m12:42:05.531847 [warn ] [MainThread]: [[33mWARNING[0m]: Use managed Iceberg tables when table_format is iceberg. When this flag is disabled, UniForm is used instead.
+You may opt into the new behavior sooner by setting `flags.use_managed_iceberg` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:05.532862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63b8860050>]}
+[0m12:42:05.540976 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m12:42:05.576447 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:42:05.576894 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:42:05.577117 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:42:05.577476 [warn ] [MainThread]: [[33mWARNING[0m]: Enable concurrent execution of microbatch incremental batches. When enabled, dbt will run microbatch batches in parallel threads instead of sequentially. The microbatch strategy itself requires dbt-core 1.9+; this flag controls whether batches run concurrently.
+You may opt into the new behavior sooner by setting `flags.use_concurrent_microbatch` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:05.577910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63b8792110>]}
+[0m12:42:05.578411 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.bkk_pipeline.gold
+- models.bkk_pipeline.silver
+[0m12:42:05.581612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63b8905b10>]}
+[0m12:42:05.618279 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:05.619536 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:05.623611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63b86e16d0>]}
+[0m12:42:05.624040 [info ] [MainThread]: Found 732 macros
+[0m12:42:05.624371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e81350f5-5665-43e4-b6f0-7504103cf7cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63bae120d0>]}
+[0m12:42:05.624870 [warn ] [MainThread]: The selection criterion 'models/gold' does not match any enabled nodes
+[0m12:42:05.625792 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m12:42:05.627099 [debug] [MainThread]: Command end result
+[0m12:42:05.649913 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:05.651399 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:05.653563 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_transform/target/run_results.json
+[0m12:42:05.654289 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.047178, "process_in_blocks": "0", "process_kernel_time": 0.151527, "process_mem_max_rss": "264140", "process_out_blocks": "3184", "process_user_time": 5.072711}
+[0m12:42:05.654886 [debug] [MainThread]: Command `dbt run` succeeded at 12:42:05.654827 after 1.05 seconds
+[0m12:42:05.655302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f641a286c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6418814810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63ba895b50>]}
+[0m12:42:05.655846 [debug] [MainThread]: Flushing usage events
+[0m12:42:06.512110 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:42:08.544359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c52d390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c659910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c52ce10>]}
+
+
+============================== 12:42:08.546523 | e923803d-597d-4ba9-b628-f845bafc599c ==============================
+[0m12:42:08.546523 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:42:08.547875 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'target_path': 'None', 'use_colors': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt test --profiles-dir .', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'printer_width': '80', 'profiles_dir': '.', 'partial_parse': 'True', 'quiet': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_transform/logs', 'write_json': 'True', 'warn_error': 'None', 'no_print': 'None', 'static_parser': 'True'}
+[0m12:42:08.952821 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m12:42:08.954018 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m12:42:08.954884 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m12:42:09.384429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcdcd6ecd0>]}
+[0m12:42:09.420386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c5618d0>]}
+[0m12:42:09.422216 [info ] [MainThread]: Registered adapter: databricks=1.11.6
+[0m12:42:09.473209 [warn ] [MainThread]: [[33mWARNING[0m]: Use managed Iceberg tables when table_format is iceberg. When this flag is disabled, UniForm is used instead.
+You may opt into the new behavior sooner by setting `flags.use_managed_iceberg` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:09.474648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcdc99c110>]}
+[0m12:42:09.483293 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m12:42:09.518286 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:42:09.519003 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:42:09.519359 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:42:09.520187 [warn ] [MainThread]: [[33mWARNING[0m]: Enable concurrent execution of microbatch incremental batches. When enabled, dbt will run microbatch batches in parallel threads instead of sequentially. The microbatch strategy itself requires dbt-core 1.9+; this flag controls whether batches run concurrently.
+You may opt into the new behavior sooner by setting `flags.use_concurrent_microbatch` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m12:42:09.520744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcdc8c2150>]}
+[0m12:42:09.521182 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.bkk_pipeline.gold
+- models.bkk_pipeline.silver
+[0m12:42:09.524438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcdc8fa4d0>]}
+[0m12:42:09.562597 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:09.563965 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:09.573225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcdc902210>]}
+[0m12:42:09.573699 [info ] [MainThread]: Found 732 macros
+[0m12:42:09.574118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e923803d-597d-4ba9-b628-f845bafc599c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3ea9c910>]}
+[0m12:42:09.575304 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m12:42:09.576592 [debug] [MainThread]: Command end result
+[0m12:42:09.598968 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m12:42:09.600472 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m12:42:09.602725 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_transform/target/run_results.json
+[0m12:42:09.603584 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.0927758, "process_in_blocks": "0", "process_kernel_time": 0.175527, "process_mem_max_rss": "265496", "process_out_blocks": "3184", "process_user_time": 5.120505}
+[0m12:42:09.604187 [debug] [MainThread]: Command `dbt test` succeeded at 12:42:09.604107 after 1.09 seconds
+[0m12:42:09.604581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c89dc90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c59bc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd3c59bb50>]}
+[0m12:42:09.604871 [debug] [MainThread]: Flushing usage events
+[0m12:42:10.402200 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,11 @@
+# This file must be in the same folder as dbt_project.yml
+databricks: # This name MUST match the 'profile' field in dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: bkk_lakehouse # Match your sources.yml
+      schema: default
+      host: <your-databricks-host>
+      http_path: <your-sql-warehouse-or-cluster-path>
+      token: <your-personal-access-token>
