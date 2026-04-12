@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: bkk_lakehouse # Update this to match your Databricks catalog name
+    schema: default         # Update this to match your Databricks schema
+    tables:
+      - name: bkk_realtime
+      - name: static_trips

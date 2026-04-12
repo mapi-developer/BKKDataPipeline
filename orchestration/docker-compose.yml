@@ -8,6 +8,14 @@ services:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/database/airflow.db
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin
+      - _AIRFLOW_WWW_USER_EMAIL=admin@example.com
+      - _AIRFLOW_WWW_USER_FIRSTNAME=Admin
+      - _AIRFLOW_WWW_USER_LASTNAME=User
+      
       - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
       - PATH=/home/airflow/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-17-openjdk-amd64/bin
       - PYSPARK_PYTHON=/usr/local/bin/python
@@ -19,7 +27,9 @@ services:
       - ../databricks_workspace:/opt/airflow/workspace
       - ./database:/opt/airflow/database
       - ../dbt_transform:/opt/airflow/dbt_transform
-    command: standalone
+    command: >
+      bash -c "echo 'admin' > /opt/airflow/standalone_admin_password.txt &&
+      airflow standalone"
 
 volumes: 
   airflow_db:
